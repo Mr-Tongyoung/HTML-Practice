@@ -7,24 +7,37 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #333;
+  padding-bottom:100px;   /* ★ 바닥 여백 확보 */
+}
+
+.container{
+  max-width: 1600px;     /* 중앙 컨텐츠 폭 */
+  margin: 0 auto;
+  padding: 0 100px;      /* 좌우 100 px 가이드 */
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  position:sticky; top:0; z-index:1000;
 }
+
+/* header > .container 에 flex 정렬 */
+header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:100px;       /* 필요 시 조정 */
+}
+
+/* 로고는 피그마 기준 폭 306px 확보(글자·이미지 포함) */
+.logo{ width:306px; }
 
 .nav-links {
   display: flex;
+  /* justify-content: space-between; */
   gap: 30px;
   list-style: none;
 }
@@ -40,75 +53,192 @@ header {
   color: #6e00ff;
 }
 
-.icons {
+.social-icons{
   display: flex;
-  align-items: center;
   gap: 16px;
-  margin-left: 40px;
+}
+.social-icons img{
+  width:24px;
+  height:24px;
+  filter:grayscale(100%);
+  transition:filter .3s;
+}
+.social-icons img:hover{
+  filter:grayscale(0%);
 }
 
-.icons span {
-  font-size: 20px;
-  cursor: pointer;
-}
+/* 공통 섹션 간격 (헤더 제외) */
+section.container{ margin-bottom:100px; }
 
-.intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 60px;
-  background-color: #f5f5f5;
+/* 인트로 레이아웃 */
+.intro.container{
+  display:flex;
+  justify-content:space-around;   /* space-around → space-between */
+  align-items:center;
+  padding:80px 0;                 /* 세로 안쪽 여백 */
+  background:#f5f5f5;
 }
-
 .intro-text h1 {
   font-size: 32px;
   line-height: 1.6;
   color: #333;
   font-weight: 700;
 }
-
 .highlight {
   color: #3b1fff;
 }
-
 .intro-image img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #3b1fff;
-}
-.tech-stack {
-  text-align: center;
-  padding: 80px 40px;
-  background-color: #fff;
+  border: 10px solid #3b1fff;
 }
 
+/* 기술스택 레이아웃 */
+.tech-stack.container{
+  text-align: center;
+  padding: 0;
+}
 .tech-stack h2 {
   font-size: 28px;
   color: #333;
   margin-bottom: 10px;
 }
-
 .tech-stack p {
   font-size: 16px;
   color: #666;
   margin-bottom: 40px;
 }
-
 .stack-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
+  display: grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:40px 30px;                  /* 세로 40, 가로 30 */
+  justify-items:center;
 }
-
 .stack-icons img {
   width: 50px;
   height: 50px;
   transition: transform 0.3s ease;
 }
-
 .stack-icons img:hover {
   transform: scale(1.1);
 }
+
+/* 프로젝트 레이아웃 */
+.projects.container{
+  text-align:center;
+  padding: 5%;                 /* 가로 패딩은 container가 처리 */
+}
+
+.projects h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+.projects p{
+  font-size:16px;
+  color:#666;
+  margin-bottom:80px;        /* ★ 제목+설명 ↔ 카드 사이 80px */
+}
+
+/* 카드 3×2 그리드 : 1200px 기준 3등분 */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:80px 60px;             /* ★ 세로 80, 가로 60 */
+}
+
+/* 카드 자체 */
+.project-card{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  overflow:hidden;           /* 썸네일 모서리 컷 */
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+}
+
+.project-card img{
+  width:100%; height:180px; object-fit:cover;
+}
+
+.project-card h3{
+  font-size:18px; margin:16px;
+}
+
+.project-card .desc{
+  font-size:14px; color:#555; margin:0 16px 20px;
+  flex:1;                    /* 내용이 늘어나도 버튼은 아래로 */
+}
+
+.project-card .links{
+  display:flex; gap:16px; padding:0 16px 16px;
+}
+.project-card .links a{
+  font-size:14px; font-weight:600; text-decoration:none;
+  color:#3b1fff; transition:.3s;
+}
+.project-card .links a:hover{color:#6e00ff;}
+
+
+/* 푸터 레이아웃 */
+.footer{
+  background:#fff;
+  /* 필요하면 그림자·그라디언트 등 */
+  margin-top:80px;          /* 프로젝트 섹션과의 간격 */
+}
+
+/* 윗줄: 로고 · 연락처 · 아이콘 */
+.footer-top{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  margin-bottom:40px;
+}
+
+.footer-logo{
+  font-weight:bold; line-height:1.1; font-size:26px;
+}
+.footer-logo span{color:#888;font-size:18px;font-weight:600;}
+
+.footer-contact{
+  text-align: center;     /* 중앙 정렬 */
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;;
+  gap: 4px;               /* 줄 간격 */
+}
+.footer-contact p{
+  margin:4px 0; color:#666; font-size:14px;
+}
+
+/* 소셜 */
+.footer-social{display:flex;gap:24px;}
+.footer-social img{
+  width:24px;height:24px;filter:grayscale(100%);transition:.3s;
+}
+.footer-social img:hover{filter:grayscale(0%);}
+
+/* 가로 구분선 */
+.footer-divider{
+  border:none; height:1px; background:#ccc; margin-bottom:40px;
+}
+
+/* 아랫줄 */
+.footer-bottom{
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:20px;
+}
+
+.footer-links{
+  display:flex; gap:32px; list-style:none; flex-wrap:wrap;
+}
+.footer-links a{
+  text-decoration:none; font-size:14px; color:#666; transition:.3s;
+}
+.footer-links a:hover{color:#6e00ff;}
+
+.credits{
+  font-size:14px; color:#666; text-align:right;
+}
+.credits .name{color:#333;font-weight:600;}
+.credits .love{color:#e91e63;font-weight:600;}

@@ -6,10 +6,12 @@
   <title>통영이의 포트폴리오</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <!-- 헤더 시작 -->
-  <header>
+<body>
+<!-- 헤더 시작 -->
+<header>
+  <div class = "container">
+
     <div>
       <img src="logo.png" alt="로고" width="97" height="59">
     </div>
@@ -30,13 +32,15 @@
       <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
     </div>
 
-  </header>
-  <!-- 헤더 끝 -->
+  </div>
+</header>
+<!-- 헤더 끝 -->
 
-  <!-- 인트로 섹션 -->
-<section class="intro">
+<!-- 인트로 섹션 -->
+<section class="intro container">
   <div class="intro-text">
-    <h1>Hi <span>👋</span>,<br>
+    <h1>
+      Hi <span>👋</span>,<br>
       제 이름은 <span class="highlight">통영이</span>에요!<br>
       저는 <span class="highlight">왕왕 짖기</span>를 잘 해요!
     </h1>
@@ -45,9 +49,10 @@
     <img src="dog-profile.jpeg" alt="통영이 프로필 이미지">
   </div>
 </section>
+<!-- 인트로 섹션 끝 -->
 
 <!-- 기술 스택 섹션 -->
-<section class="tech-stack">
+<section class="tech-stack container">
   <h2>My Tech Stack</h2>
   <p>제가 주로 사용하는 기술 스택들이에요</p>
   <div class="stack-icons">
@@ -63,11 +68,140 @@
     <img src="icons/greensock.png" alt="Greensock">
     <img src="icons/vscode.png" alt="VScode">
     <img src="icons/github-fill.png" alt="Ginhub-fill">
-    <!-- 필요 시 더 추가 -->
   </div>
 </section>
+<!-- 기술 스택 섹션 끝 -->
 
+<!-- 프로젝트 섹션 -->
+<section class="projects container">
+  <h2>Projects</h2>
+  <p>Things I've built so far</p>
 
+  <div class="project-grid">
+    <!-- 카드 1 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+
+    <!-- 카드 2 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+
+    <!-- 카드 3 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+
+    <!-- 카드 4 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+
+    <!-- 카드 5 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+
+    <!-- 카드 6 -->
+    <article class="project-card">
+      <img src="icons/project-thumb.png" alt="Project thumbnail">
+      <h3>Project Title goes here</h3>
+      <p class="desc">
+        This is sample project description. It gives a brief summary…
+      </p>
+      <div class="links">
+        <a href="#">Live Preview</a>
+        <a href="#">View Code</a>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- 프로젝트 섹션 끝-->
+
+<!-- 연락처 섹션 -->
+<footer class="footer">
+  <div class="container">
+    <!-- 윗줄 -->
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="logo.png" alt="로고" width="57" height="35">
+      </div>
+
+      <div class="footer-contact">
+        <p>Phone: +82 10-2810-5273</p>
+        <p>Email: kokm333@gmail.com</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://github.com/Mr-Tongyoung" target="_blank"><img src="icons/github.png"   alt="GitHub"></a>
+        <a href="#"><img src="icons/twitter.png"  alt="Twitter"></a>
+        <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- 구분선 -->
+  <hr class="footer-divider">
+
+  <!-- 아랫줄 -->
+  <div class="footer-bottom">
+    <ul class="footer-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Technologies</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <p class="credits">
+      Designed and built by <span class="name">Pavan MG</span> with
+      <span class="love">Love &amp; Coffee</span>
+    </p>
+  </div>
+</footer>
+<!-- 연락처 섹션 끝 -->
 
 </body>
 </html>
